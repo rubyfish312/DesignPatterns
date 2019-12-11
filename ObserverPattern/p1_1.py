@@ -1,7 +1,7 @@
 #p1_1
 from abc import ABCMeta, abstractmethod
 
-#%%
+#%% ducking type
 class WaterHeater:
 
     def __init__(self):
@@ -25,3 +25,4 @@ class WaterHeater:
 
 
 # %%
+class Observer(metaclass)
