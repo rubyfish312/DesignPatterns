@@ -25,4 +25,9 @@ class WaterHeater:
 
 
 # %%
-class Observer(metaclass)
+class Observer(metaclass=ABCMeta):
+    @abstractmethod
+    def update(self, waterHeater):
+        pass
+
+# %%
