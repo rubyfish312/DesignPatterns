@@ -1,11 +1,11 @@
 #%%
 from abc import ABCMeta, abstractmethod
-from ObserverPattern import p1_2
-#from p1_2 import Observable, Observer
+#rom ObserverPattern import p1_2
+from p1_2 import Observable, Observer
 #import p1_2
 
 # %%
-class WaterHeater(p1_2.Observable):
+class WaterHeater(Observable):
     
     def __init__(self):
         super().__init__()
@@ -21,13 +21,13 @@ class WaterHeater(p1_2.Observable):
 
 
 # %%
-class WashingMode(p1_2.Observer):
+class WashingMode(Observer):
     def update(self, observable, object):
         if isinstance(observable, WaterHeater) and \
            observable.getTemperature() >= 50 and  observable.getTemperature() < 70:
             print("hot water is ready for taking a bath")
 
-class DrinkingMode(p1_2.Observer):
+class DrinkingMode(Observer):
      def update(self, observable, object):
          if isinstance(observable, WaterHeater) and  observable.getTemperature() >= 100:
              print("hot water is ready to drink")
