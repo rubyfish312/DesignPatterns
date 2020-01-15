@@ -50,14 +50,14 @@ def showInfo(*args, **kwargs):
 # INFO:root: showInfo() finish
 # " run into the rightest ('arg1','arg2',kwarg1 = 1,kwarg = 2)"
 
-#loggingDecorator(showInfo('arg1','arg2',kwarg1 = 1,kwarg = 2))
+# loggingDecorator(showInfo('arg1','arg2',kwarg1 = 1,kwarg = 2))
 # this is a testing func with args :  ('arg1', 'arg2') {'kwarg1': 1, 'kwarg': 2}
 # <function __main__.loggingDecorator.<locals>.wrapperLogging(*args, **kwargs)>
 # " only print showInfo('arg1','arg2',kwarg1 = 1,kwarg = 2) "
 
 #%%
-#decoratedShowInfo = loggingDecorator(showInfo)
-#decoratedShowInfo('arg1','arg2',kwarg1 = 1,kwarg = 2)
+# decoratedShowInfo = loggingDecorator(showInfo)
+# decoratedShowInfo('arg1','arg2',kwarg1 = 1,kwarg = 2)
 # INFO:root: start showInfo() ...
 # this is a testing func with args :  ('arg1', 'arg2') {'kwarg1': 1, 'kwarg': 2}
 # INFO:root: showInfo() finish

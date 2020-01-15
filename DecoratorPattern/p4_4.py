@@ -11,23 +11,49 @@ class ClassDecorator:
         self._numOfCall += 1
         obj = self._func(*args, *kwargs)
         print("creat %s 's %d th instance : %s" %(self._func.__name__, self._numOfCall, id(obj)))
-        return obj
+        #return obj
+
 
 
 #%%
-@ClassDecorator
-class MyClass:
+class MyClass0:
     def __init__(self, name):
         self._name = name
+        
     def getName(self):
         return self._name
 
 #%%
-tony = MyClass("Tony")
-karry = MyClass("Karry")
-print(id(tony))
-print(id(karry))
-    
+player0 = ClassDecorator(MyClass0)  
+player0('PL')
+
+#%%
+@ClassDecorator
+class MyClass1:
+    def __init__(self, name):
+        self._name = name
+        
+    def getName(self):
+        return self._name
+
+#%%
+#player0 = ClassDecorator(MyClass0)  
+player1 = MyClass1('PL')
+#%%
+class MyClass2:
+    def __init__(self, func):
+        self._func = func
+        self._numOfCall = 0
+
+    def __call__(self, *args, **kwargs):
+        self._numOfCall += 1
+        print(self._numOfCall,' ',self._func)
+
+if __name__ == '__main__':
+     player2 = MyClass2(func='PL')
+     player2()  # call.__call__(), see player2 as a function
+ 
+     player2.__call__()
 
 
 # %%
