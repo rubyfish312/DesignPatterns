@@ -11,7 +11,7 @@ class ClassDecorator:
         self._numOfCall += 1
         obj = self._func(*args, *kwargs)
         print("creat %s 's %d th instance : %s" %(self._func.__name__, self._numOfCall, id(obj)))
-        #return obj
+        return obj
 
 
 
@@ -23,19 +23,22 @@ class MyClass0:
     def getName(self):
         return self._name
 
+    def getName2(self):
+        return print(self._name)    
+        
 #%%
 player0 = ClassDecorator(MyClass0)  
-player0('PL')
+player0('Tony')
 
 #%%
-@ClassDecorator
+#@ClassDecorator
 class MyClass1:
     def __init__(self, name):
         self._name = name
         
     def getName(self):
-        return self._name
-
+        return print(self._name)
+        #pass
 #%%
 #player0 = ClassDecorator(MyClass0)  
 player1 = MyClass1('PL')
